@@ -18,12 +18,16 @@
 import time
 import random as r
 
+print("\n---------------- Collatz Algorithm by Kyle Dickey ----------------")
+
 # Get number to test from user
 def getNum():
-    print("Input a number, press 'r' for a random, or press 'q' to quit:")
+    print("\nInput a number, press 'r' for a random, or press 'q' to quit:")
     global num
     num = input()
     if num == 'q':
+        print("---------------- Thank you for using ----------------")
+        time.sleep(0.5)
         exit()
     elif num == 'r':
         num = r.randint(1,9999999999999999999999999999999999999999999999999999999)
@@ -35,9 +39,14 @@ getNum()
 
 # Algorithm to test inputed number
 def collatzAlgorithm(num):
+
+    global runs
+    runs = 0
     global start
     start = time.time()
+
     while True:
+        runs += 1
 
         # If the number is even
         if (num % 2) == 0:
@@ -59,16 +68,20 @@ def collatzAlgorithm(num):
 collatzAlgorithm(num)
 
 # Tell the user it finished and how long it took
-def tryAgain():
-    x = 1
-    while x == 1:
-        end = time.time()
-        elapsedTime = end - start
-        print(f"Loop reached... Took {elapsedTime}s")
-        getNum()
-        collatzAlgorithm(num)
+def reportLoop(runs): 
+    end = time.time()
+    elapsedTime = end - start
+    print(f"\nLoop reached... \nCalculated {runs} numbers in {elapsedTime} seconds\n")
 
-tryAgain()
+# Define Startup process
+def startUp():
+    reportLoop(runs)
+    getNum()
+    collatzAlgorithm(num)
+
+# Run startup infinity until quit by user
+while True:
+    startUp()
 
 # --------------------------------------------------------------------------------------------------------------------------------- 
 
