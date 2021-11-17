@@ -18,7 +18,7 @@
 import time
 import random as r
 
-print("\n---------------- Collatz Algorithm by Kyle Dickey ----------------")
+print("\n---------------- Collatz Calculator by Kyle Dickey ----------------")
 
 # Get number to test from user
 def getNum():
