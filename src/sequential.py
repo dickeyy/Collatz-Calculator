@@ -1,4 +1,5 @@
 import json
+import time as t
 
 # Get number to start test
 with open('Collatz-Algorithm/src/lastSuccessful.json', 'r') as openfile:
@@ -19,6 +20,7 @@ while True:
             # store last successful number
             lastSuccessWrite = {
                 "number": oNum,
+                "startedAt": t.strftime(r"%m/%d/%Y %H:%M:%S", t.localtime())
             }
             
             # Serializing json 
@@ -42,6 +44,7 @@ while True:
             # store last successful number
             lastSuccessWrite = {
                 "number": oNum,
+                "startedAt": t.strftime(r"%m/%d/%Y %H:%M:%S", t.localtime())
             }
 
             # Serializing json 
