@@ -26,7 +26,7 @@ def getNum():
     global num
     num = input()
     if num == 'q':
-        print("---------------- Thank you for using ----------------")
+        print("\n---------------- Thank you for using ----------------\n\n")
         time.sleep(0.5)
         exit()
     elif num == 'r':
