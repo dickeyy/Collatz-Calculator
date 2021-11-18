@@ -31,9 +31,11 @@ def getNum():
         exit()
     elif num == 'r':
         num = r.randint(1,9999999999999999999999999999999999999999999999999999999)
-    else:
+    else:  
         num = int(num)
-        pass
+        if num <= 0:
+            num =1
+            pass
 
 getNum()
 
