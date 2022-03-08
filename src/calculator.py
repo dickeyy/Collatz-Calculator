@@ -37,6 +37,8 @@ def getNum():
             num =1
             pass
 
+    print(f'\n\nStarting at: {num} \n\n')
+
 getNum()
 
 # Algorithm to test inputed number
@@ -70,14 +72,15 @@ def collatzAlgorithm(num):
 collatzAlgorithm(num)
 
 # Tell the user it finished and how long it took
-def reportLoop(runs): 
+def reportLoop(runs, num): 
     end = time.time()
     elapsedTime = end - start
+    print(f"\nNumber Tested: {num}")
     print(f"\nLoop reached... \nCalculated {runs} numbers in {elapsedTime} seconds\n")
 
 # Define Startup process
 def startUp():
-    reportLoop(runs)
+    reportLoop(runs, num)
     getNum()
     collatzAlgorithm(num)
 
@@ -91,4 +94,4 @@ while True:
 # The actual algorithm has some non-required code in it for the timer and stuff so it could be shorter,
 # so realistically it could be about 10 lines of code,
 # it also is probably not as optimized as it could be but its good enough. 
-# this skript also allows a user to test their own number or test a random number 
+# this script also allows a user to test their own number or test a random number 
